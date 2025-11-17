@@ -1,0 +1,119 @@
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="try.css">
+</head>
+<body>
+
+<div class="off-screen-manu">
+    <ul>
+        <li>Work</li>
+        <li>My Story</li>
+        <li>Resume</li>
+        <li>Contact</li>
+    </ul>
+</div>
+
+<nav>
+    <div class="ham-manu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</nav>
+    
+        
+
+<script>
+  
+const hamManu = document.querySelector('.ham-manu');
+const offScreenManu = document.querySelector('.off-screen-manu');
+
+hamManu.addEventListener('click', ()=>{
+    hamManu.classList.toggle('active');
+    offScreenManu.classList.toggle('active');
+})
+</script>
+
+</body>
+</html>
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Overlay Nav Example</title>
+  <link rel="stylesheet" href="try.css" />
+</head>
+<body>
+
+ 
+  <button class="menu-toggle" id="menu-toggle">
+    <div class="bar" id="bar1"></div>
+    <div class="bar" id="bar2"></div>
+    <div class="bar" id="bar3"></div>
+  </button>
+
+  <!-- Navigation overlay --
+  <div class="nav-overlay" id="nav-overlay">
+    <nav class="overlay-nav">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Portfolio</a></li>
+        <li><a href="#">Lab</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Rest of page content --
+  <div class="page-content">
+    <h1>Welcome to my site</h1>
+    <p>Some content here…</p>
+  </div>
+  --->
+  
+  <script>
+  
+let odd = [];
+let sum =0;
+
+for(let i = 1; i <= 7; i++){
+  odd.push(i);
+
+    if (i%2) {
+      console.log(odd);
+    }
+  
+ 
+}
+
+    /*
+    const toggleBtn = document.getElementById('menu-toggle');
+const navOverlay = document.getElementById('nav-overlay');
+
+toggleBtn.addEventListener('click', () => {
+  toggleBtn.classList.toggle('active');
+  navOverlay.classList.toggle('active');
+});
+
+// Optionally close menu when clicking overlay (outside links)
+navOverlay.addEventListener('click', (e) => {
+  // If the click is directly on the overlay (not on nav)
+  if (e.target === navOverlay) {
+    toggleBtn.classList.remove('active');
+    navOverlay.classList.remove('active');
+  }
+});*/
+  </script>
+
+</body>
+</html>

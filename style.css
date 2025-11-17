@@ -1,0 +1,854 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+--primary-color:#2c3855;
+--primary-color-dark:#435681;
+--text-dark:#333333;
+--text-light:#767268;
+--extra-light:#f3f4f6; 
+--white:#ffffff;
+--max-width: 1200px;
+}
+*{
+margin: 0;
+padding: 1;
+box-sizing: border-box;
+}
+body{
+    overflow-x: hidden;
+    scroll-behavior:smooth;
+}
+
+
+/*
+.left-side p{
+    
+    color: var(--text-dark);
+    font: 1em sans-serif;
+    margin-bottom: 1rem;
+    color: var(--text-light);
+    font-size: 0.9rem;
+    font-weight: 200;
+    text-align: left;
+    padding: 10px 60px;
+
+
+     flex-direction: column;
+    flex: 1;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: ;
+    padding-right: 7% ;
+    display: flex;
+    position: relative;    
+}
+*/
+
+/* .left-side h3{
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    padding-top: 50%;
+
+}
+/**************** Divider start ******************/
+.divider{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    
+}
+.left-side{
+    flex: 1;
+    background: var(--white);
+    height: 100%;
+    margin-top: 22%;
+    max-width: 50%;
+    padding-left: 40px;
+   
+
+}
+.right-side{
+    flex: 1;
+    background: url(pics/Henry\ Fotografos1772.JPG);
+    height: 100%;
+    background-size: cover;
+    background-position: 50% 60%;
+}
+
+.heading{
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 24px;
+    font-family: Oswald, sans-serif;
+    font-size: 44px;
+    font-weight: 550;
+    line-height: 52px;
+    padding-left: 14%;
+}
+
+.white {
+    width: 100%;
+    max-width: 600px;
+    color: var(--dark-grey);
+    margin-top: -5px;
+    margin-bottom: 0;
+    font-family: Droid Sans, sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+    padding-left: 14%;
+    font-weight: 100;
+}
+.arrow{
+    position: absolute;
+    z-index: 4;
+    left: 48%;
+    width: 64px;
+    height: 64px;
+    background-color: hsl(39, 100%, 50%);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    bottom: 32px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, .2);
+    cursor: pointer;
+}
+.arrow a{
+    background: transparent;
+    color: #f0efef;
+}
+.arrow:hover{
+    background-color: hsl(30, 95%, 50%);
+}
+/**************** Divider end ******************/
+
+
+/****    intersection observer  *****/
+.card-container{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.card{
+    background: #ffffff;
+    border: 1px;
+    border-radius: .25rem;
+    padding: .5rem;
+    transform: translateX(100px);
+    opacity: 0;
+    transition: 3s;
+}
+
+.card.show{
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.card-right{
+    background: #ffffff;
+    border: 1px;
+    border-radius: .25rem;
+    padding: .5rem;
+    transform: translateX(-100px);
+    opacity: 0;
+    transition: 3s;
+}
+.card-right.show{
+    transform: translateX(0);
+    opacity: 3;
+    transition: ease 2s;
+}
+/****************** Links **************************/
+.links li a{
+    font-size: 1.3rem;
+    position: ;
+    width: 64px;
+    height: 64px;
+    border: 1px solid rgb(255, 255, 255);
+    justify-content: center;
+    align-content: center;
+    padding-left: 20px;
+    color: #fff;
+   
+}
+.links ul li{
+    color:#fff;
+    list-style-type: none;
+    font-size: 3rem;
+    padding:0px 2px;
+    display: inline;
+    
+}
+.links{
+    margin-right: -4px;
+    position: absolute;
+    bottom: 40px;
+    right: 48px;
+    cursor: pointer;   
+    
+}
+
+.links li a:hover{
+    background: goldenrod;
+    transition: .3s ease-in-out;
+    border: transparent;
+    z-index: 1;
+    
+}
+/*****************links end **********************************/
+
+
+/*************** HUMBURGER MANU START ****************/
+
+.nav-menu-left{
+    position: fixed;
+    top: 0;
+    left: 80px;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    opacity: 0 ;
+    visibility: hidden;
+    transition: opacity 1s ease, visibility 2s ease; /* not active */
+    z-index: 100; /* 👈 ensures the nav appears above all content */
+    overflow-y: auto;  
+}
+
+.nav-menu-left.active{
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+    transition: opacity 1s ease, visibility 2s ease;
+}
+
+
+.nav-menu-left ul li {
+    border: px solid black;
+    margin-left: 230px;
+    color: black;
+    text-align: left;
+    text-transform: uppercase;
+    list-style-type: none;
+    font-size: 2.3rem;
+    padding: 10px 5px;
+    
+    /*animation*/
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: all 0.5s ease;
+   cursor: pointer;
+}
+.nav-menu-left.active ul li:hover{
+    color: rgba(0, 0, 0, 0.396);
+    transition: all .4s ease;
+    padding-left: 20px;
+}
+.nav-menu-left.active ul li {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+
+  .nav-menu-left.active ul li:nth-child(1) {
+    transition-delay: 0.1s;
+  }
+  .nav-menu-left.active ul li:nth-child(2) {
+    transition-delay: 0.2s;
+  }
+  .nav-menu-left.active ul li:nth-child(3) {
+    transition-delay: 0.3s;
+  }
+  .nav-menu-left.active ul li:nth-child(4) {
+    transition-delay: 0.4s;
+  }
+  .nav-menu-left.active ul li:nth-child(5) {
+    transition-delay: 0.5s;
+  }
+
+
+
+.hamburger, .bar{
+    position: fixed;
+}
+
+.hamburger{
+    display: block;
+    top: 90%;
+    left: 2.9%;
+    height: 40px;
+    background: 0;
+    transform: translate(-50%);
+    border: 3px solid transparent;
+    width: 3.3%;
+    cursor: pointer;
+   
+   
+}
+.bar{
+    top: 3px;
+    background: #000;
+    width: 30px;
+    height: 4px;
+    transition: all .3s ease-in;
+    cursor: pointer;
+    margin-top: 5px;    
+}
+#bar2{
+    top: 11px;
+}
+#bar3{
+    top: 19px;
+}
+
+.hamburger.open #bar1{
+background-color: black;
+transform: rotate(45deg) translate(11px, 1px);
+}
+.hamburger.open #bar2{
+    background-color: transparent;
+}
+.hamburger.open #bar3{
+    background-color: black;
+    transform: rotate(-45deg) translate(11px, 1px);
+}
+
+.nav-bar-left {
+    z-index: 1000;
+    width: 88px;
+    box-shadow: 1px 0 0 0 rgb(219, 219, 219);
+    background-color: #ffffff;
+    border-right: 1px solid rgb(228, 223, 223);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    display: flex;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.nav-info {
+    width: 480px;
+    height: 72px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding-top: 2px;
+    display: flex;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    transform: rotate(-90deg);
+}
+
+.nav-info-heading {
+    text-align: center;
+    letter-spacing: 3px;
+    margin-top: 0;
+    margin-bottom: 4px;
+    font-family: Ubuntu, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.nav-info-description {
+    color: var(--dark-grey);
+    text-align: center;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-family: Droid Sans, sans-serif;
+    font-size: 11px;
+    line-height: 16px;
+}
+
+
+/*************** HUMBURGER MANU END ****************/
+
+
+.section_container{
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 5rem 1rem;
+}
+
+.section_header{
+    font-size: 2rem;
+    font-weight:600;
+    color: var(--text-dark);
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+}
+img{
+    width: 100%;
+    display: flex;
+}
+
+nav{
+ margin: auto;
+ padding: 2rem 1rem;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+}
+
+.nav_logo{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.nav_links{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+.links a{
+    font-weight: 500;
+    color: var(--text-light);
+    transition: 0.3s;
+}
+.nav_links a:hover{
+    color: var(--primary-color);
+}
+
+.header_container{
+    padding: 1rem 10.2rem 5rem 10.2rem;
+}
+
+
+.header_image_container{
+    position: relative;
+    min-height: 530px;
+    background-image:linear-gradient(to right, rgba(44,56,85,.9), rgba(110,125,187,.1)), url("pics/LOC_MDV_shutterstock_1938868960WebOriginalCompressed.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 2rem;
+    background-position: center ;
+}
+.header_content{
+    max-width: 700px;
+    padding: 5rem 2rem;
+    
+}
+.header_content h1{
+    margin-bottom: 2rem;
+    font-size: 4rem;
+    line-height: 4rem;
+    font-weight: 600;
+    color:var(--white);
+    text-align: left;
+
+}
+p{
+    font-weight: 400;
+    font-size: 1.3rem;
+    text-align: left;
+    color: var(--white);
+    
+}
+body{
+    font-family: "poppins", sans-serif;
+}
+
+
+/************************* popular hotels section *****************************/
+.popular_container{
+background-color: #f3f2f2;
+padding: 5rem 1rem;
+}
+
+.popular_grid{
+    padding-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.popular_card{
+    overflow: hidden;
+    border-radius: 1rem;
+    box-shadow: 5px 5px 20px rgba(0,0,0,0.1);
+    background-color: var(--white);
+}
+
+.popular_content{
+    padding: 1rem;
+}
+
+.popular_card_header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.popular_card_header h4{
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+.popular_content p{
+    padding-top: 1.5rem;
+    color: gray;
+}
+/********************** client section ********************/
+.client{
+    background-color: var(--white);
+}
+.client_grid{
+    margin-top: 4rem;
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+.client_card{
+    padding: 2rem;
+    background-color: var(--white);
+    border-radius: 1rem;
+    box-shadow: 5px 5px 20px rgba(0,0,0,0.1);
+}
+.client_card img{
+    max-width: 80px;
+    margin: auto;
+    margin-bottom: 1rem;
+    border-radius: 100%;
+}
+.client_card p{
+    text-align: center;
+    color: var(--text-dark);
+}
+.client_container{
+max-width: 1200px;
+margin: auto;
+padding: 5rem 1rem;
+}
+
+/*********************** footer section ***********************/
+.footer{
+    background-color: var(--extra-light);
+}
+
+.footer_container{
+    display: grid;
+    grid-template-columns: 2fr repeat(3, 1fr);
+    gap: 5rem;
+}
+.footer_col h3{
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+.footer_col h4{
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-dark); 
+}
+.footer_col p{
+    margin-bottom: 1rem;
+    color: var(--text-light);
+    cursor: pointer;
+    transition: .3s;
+    font-size: 1rem;
+    font-weight: 400;
+}
+ .footer_col p:hover{ 
+    color: var(--text-dark);
+}
+ .footer_bar{
+    position:relative;
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 1rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-light);
+    text-align: right;
+    overflow: hidden;
+    
+ }
+ .footer_bar::before{
+    position: absolute;
+    content:"";
+    top: 50%;
+    right: 23rem;
+    transform: translateY(-50%);
+    width: 17rem;
+    height: 2px;
+    background-color: var(--text-light);
+ }
+
+
+ /*********************** experience section ***********************/
+ .experience_container{
+    flex: 1;
+    background: #fff;
+    height: 100%;
+    margin-left: 88px;
+}
+
+ .experience_col{
+    max-width: 470px;
+    margin-top: 27%;
+    padding-left: 5%;
+    padding-right: 5%;
+ }
+
+.experience_col p{
+    width: 100%;
+    max-width: 500px;
+    color: var(--dark-grey);
+    margin-top: -5px;
+    margin-bottom: 0rem;
+    font-family: Droid Sans, sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+    padding-left: 10%; 
+    font-weight: 400;
+    font-size: 0.95rem;
+    cursor: pointer;
+    color: var(--text-light);
+}
+
+.experience_col h3{
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 45px;
+    font-family: Ubuntu, Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: 590;
+    line-height: 52px;
+    padding-left: 10%;
+}
+ /*********************** experience section ***********************/
+
+.section{
+    color: white;
+    background-color: orange;
+    width: 100%;
+    height: 53vh;
+    display: flex;
+    
+ }
+ .wrapper{
+  
+    width: 100%;
+    max-width: 1200px;
+    padding-right: 0;
+    position: relative;
+    padding-left: 300px;
+    padding-top: 50px;
+   
+ }
+ .quote p{
+    width: 100%;
+    line-height: 32px;
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 300;
+    font-family: Droid Sans, sans-serif;
+    line-height: 35px;
+    background-color: transparent;
+    padding-left: 50px;
+    
+    
+    
+    
+ }
+
+ .fa-solid {
+    font-size: 2.4rem ;
+    background-color: orange;    
+    
+ }
+
+/************************************* project work section **************************************************************/
+.project-divider{
+    width: 100%;
+    height: 70vh;
+    display: flex;   
+}
+/*********************right side *************************/
+.trip-container-left-side {
+    flex: 1;
+    position: relative;
+    margin: 7% 6%;
+    left: 20px; 
+    size: 90px;
+}
+.trip-container-left-side img{
+    background: no-repeat;
+    top: 50px;
+    position: relative;
+    margin: 13% 1%;
+    height: 100%;
+    width: 95%;
+    left: 50px;
+}
+
+.trip-container-right-side{
+    flex: 1;
+    height: 60%;
+    max-width: 500px;
+    overflow: hidden;
+    margin: 13.4% 2%;
+    background-color:;
+    right: 50px;
+    position: relative;
+    top: 55px;
+}
+.trip-container-right-side p{
+    color: #817e7e;
+    font-size: 0.95rem;
+    font-weight: 400;
+    font-family: Droid Sans, sans-serif;
+    padding-top: 15px;
+    left: 330px;
+}
+.trip-container-right-side span{
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-family: Droid Sans, sans-serif;
+    padding-bottom: 20px;
+}
+
+
+
+/*********************left side*****************************/
+
+
+.hotel-container-left-side{
+    max-width: 500px;
+    left: 180px;
+    overflow: visible;
+    z-index: 1;
+    position: relative;
+    padding-top: 160px;
+}
+.hotel-container-left-side p{
+    color: #817e7e;
+    font-size: 0.95rem;
+    font-weight: 400;
+    font-family: Droid Sans, sans-serif;
+    padding-top: 15px;
+    left: 100px;
+}
+.hotel-container-left-side span{
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-family: Droid Sans, sans-serif;
+    padding-bottom: 20px;
+}
+
+.hotel-container-right-side {
+    flex: 1;
+    position: relative;
+    margin: 7% 6%;
+    size: 90px;
+    left: 60px;
+    bottom: 100px;
+}
+
+.hotel-container-right-side img{
+    background: no-repeat;
+    top: 50px;
+    position: relative;
+    margin: 13% 1%;
+    height: 100%;
+    width: 80%;
+    border: 1px solid rgb(190, 180, 180);
+    left: 100px;
+}
+/*
+.hotel-container-left-side{
+    flex: 1;
+    height: 60%;
+    max-width: 1100px;
+    overflow: hidden;
+    margin: 13.4% 2%;
+    top: 55px;
+    left: 60px;
+    width: 100%;
+    background-color: #000;
+}
+.hotel-container-left-side p{
+    color: #817e7e;
+    font-size: 0.95rem;
+    font-weight: 400;
+    font-family: Droid Sans, sans-serif;
+    padding-top: 15px;
+    position: relative;
+    left: 60px;
+}
+.hotel-container-left-side span{
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 35px;
+    font-family: Droid Sans, sans-serif;
+    padding-bottom: 20px;
+}
+
+.hotel-container-right-side {
+    flex: 1;
+    position: relative;
+    margin: 7% 6%;
+    size: 90px;
+    background-color: grey;
+}
+.hotel-container-right-side img{
+    background: no-repeat;
+    top: 50px;
+    position: relative;
+    margin: 13% 1%;
+    height: 65%;
+    width: 100%;
+    border: 1px solid rgb(190, 180, 180);
+}
+
+/************************************* project work section end **************************************************************/
+  
+/*
+ .experience_col h3,
+.experience_col p {
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+
+.experience_col.active h3,
+.experience_col.active p {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.experience_container:nth-child(1) .experience_col h3,
+.experience_container:nth-child(1) .experience_col p {
+  transition-delay: 0.4s;
+}
+
+.experience_container:nth-child(2) .experience_col h3,
+.experience_container:nth-child(2) .experience_col p {
+  transition-delay: 0.6s;
+}
+
+.experience_container:nth-child(3) .experience_col h3,
+.experience_container:nth-child(3) .experience_col p {
+  transition-delay: 0.8s;
+}
+
+*/

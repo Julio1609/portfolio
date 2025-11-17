@@ -1,0 +1,212 @@
+
+*
+/
+.off-screen-manu{
+    background-color: rgb(34, 37,49);
+    height: 100vh;
+    width: 100%;
+    max-width: 450px;
+    position: fixed;
+    top: 0;
+    right: -450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    transition: .3s ease;
+}
+.off-screen-manu li{
+    opacity: 1;
+    transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+    transform-style: preserve-3d;
+}
+.off-screen-manu.active{
+    right: 0;
+}
+
+nav{
+    padding: 1rem;
+    display: flex;
+    background-color: rgb(34, 37,49);
+    height: 100vh;
+    width: 100px;
+}
+.ham-manu{
+    height: 50px;
+    width: 50px;
+    margin-left: 25%;
+    position: relative;
+    margin-top: 750px;
+}
+.ham-manu span{
+    height: 5px;
+    width: 100%;
+    background-color: #6f86ff;
+    border-radius: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: .3 ease;
+}
+.ham-manu span:nth-child(1){
+    top: 25%;
+}
+.ham-manu span:nth-child(3){
+    top: 75%;
+}
+
+.ham-manu.active span:nth-child(1){
+    top: 50%;
+    transform: translate(-50%, 50%) rotate(45deg);
+}
+.ham-manu.active span:nth-child(2){
+ opacity: 0;
+}
+.ham-manu.active span:nth-child(3){
+    top: 50%;
+    transform: translate(-50%, 50%) rotate(-45deg);
+}
+
+
+
+/* Reset / base 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    height: 100%;
+    font-family: sans-serif;
+  }
+  
+  /* Hamburger / menu toggle button /
+  .menu-toggle {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1100;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    width: 35px;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .bar {
+    width: 100%;
+    height: 4px;
+    background-color: #000;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+  
+  /* Overlay container (hidden by default) /
+  .nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);  /* semi-transparent dark overlay /
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+    z-index: 1050;
+  }
+  
+  /* When overlay is active / visible /
+  .nav-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  /* The actual nav inside overlay /
+  .overlay-nav {
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .overlay-nav ul {
+    list-style: none;
+    text-align: center;
+  }
+  
+  .overlay-nav ul li {
+    margin: 20px 0;
+  }
+  
+  .overlay-nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 2rem;
+    transition: color 0.3s ease;
+  }
+  
+  .overlay-nav ul li a:hover {
+    color: #ddd;
+  }
+  
+  /* Transform hamburger into “X” when active /
+  .menu-toggle.active #bar1 {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  
+  .menu-toggle.active #bar2 {
+    opacity: 0;
+  }
+  
+  .menu-toggle.active #bar3 {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+  
+  /* Page content (for demo) /
+  .page-content {
+    padding: 100px 20px;
+  }
+  */
+
+
+
+
+
+
+   
+/*
+ .experience_col h3,
+.experience_col p {
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+
+.experience_col.active h3,
+.experience_col.active p {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.experience_container:nth-child(1) .experience_col h3,
+.experience_container:nth-child(1) .experience_col p {
+  transition-delay: 0.4s;
+}
+
+.experience_container:nth-child(2) .experience_col h3,
+.experience_container:nth-child(2) .experience_col p {
+  transition-delay: 0.6s;
+}
+
+.experience_container:nth-child(3) .experience_col h3,
+.experience_container:nth-child(3) .experience_col p {
+  transition-delay: 0.8s;
+}
