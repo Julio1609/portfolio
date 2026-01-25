@@ -70,7 +70,7 @@ body{
 }
 .right-side{
     flex: 1;
-    background-image: url("../Portfolio/Pics/Henry\ Fotografos1772.JPG");
+    background-image: url("../Pics/IMG_1107.JPG");
     height: 100%;
     background-size: cover;
     background-position: 50% 60%;
@@ -163,7 +163,6 @@ body{
 /****************** Links **************************/
 .links li a{
     font-size: 1.3rem;
-    position: ;
     width: 64px;
     height: 64px;
     border: 1px solid rgb(255, 255, 255);
@@ -704,7 +703,7 @@ padding: 5rem 1rem;
     max-width: 500px;
     overflow: hidden;
     margin: 13.4% 2%;
-    background-color:;
+    
     right: 50px;
     position: relative;
     top: 55px;
@@ -773,6 +772,78 @@ padding: 5rem 1rem;
     border: 1px solid rgb(190, 180, 180);
     left: 100px;
 }
+
+
+
+/************************* work page *****************************/
+.popular_container{
+    background-color: #f3f2f2;
+    padding: 5rem 1rem;
+    }
+    
+    .popular_grid{
+        padding-top: 4rem;
+        padding-left: 4.5rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        max-width: 1300px;
+        margin: auto;
+        position: relative;
+    }
+
+    .displayed-img {  /*new line*/
+        transition: transform 0.9s ease, filter 0.9s ease;/*new line*/
+      }
+      
+      .popular_card:hover .displayed-img {/*new line*/
+        transform: scale(1.05); /*new line*/
+        filter: brightness(75%);/*new line*/ 
+      }
+    
+    .popular_card{
+        overflow: hidden;
+        border-radius: 1rem;
+        box-shadow: 5px 5px 20px rgba(0,0,0,0.1);
+        background-color: var(--white);
+    }
+    
+    .popular_content{
+        padding: 1rem;
+    }
+    
+    .popular_card_header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .popular_card_header h4{
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--text-dark);
+    }
+    .popular_content p{
+        padding-top: 1.5rem;
+        color: gray;
+    }
+
+
+    .displayed-img {
+        width: 100%;
+        transition: transform 0.3s ease;
+    }
+    
+    .popular_card:hover .displayed-img {
+        transform: scale(1.1);
+    }
+
+
+
+
+
 /*
 .hotel-container-left-side{
     flex: 1;

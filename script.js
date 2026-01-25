@@ -165,3 +165,69 @@ toggleBtn.addEventListener('click', () =>{
 
 })
 */
+
+
+
+
+/*************************************** work page  ************************************ */
+const popularGrid = document.getElementById("popularGrid");
+const clientGrid =document.getElementById("clientGrid");
+
+const hotels = [
+    {
+        image:"Pics/Fingal Hotel.webp"
+    },
+    {
+        name: "Royal Resort",
+        price: "£450.00",
+        location: "Edinburgh, Scotland",
+        image: "Pics/Rossendale Holiday Cottages & Spa.webp"
+    },
+    {
+        name: "Royal Resort",
+        price: "£450.00",
+        location: "Edinburgh, Scotland",
+        image: "Pics/Grand Hotel Scarborough.webp"
+    },
+    {
+        name: "Grand Palace",
+        price: "£599.00",
+        location: "London, United Kingdom",
+        image:"Pics/Fingal Hotel.webp"
+    },
+    {
+        name: "Royal Resort",
+        price: "£450.00",
+        location: "Edinburgh, Scotland",
+        image: "Pics/Rossendale Holiday Cottages & Spa.webp"
+    },
+    {
+        name: "Royal Resort",
+        price: "£450.00",
+        location: "Edinburgh, Scotland",
+        image: "Pics/Grand Hotel Scarborough.webp"
+    },
+    {
+
+        name: "Royal Resort",
+        price: "£450.00",
+        location: "Edinburgh, Scotland",
+        image: "Pics/Grand Hotel Scarborough.webp"
+    },
+    
+];
+
+
+hotels.forEach(hotel => {
+    const hotelCard = document.createElement("div");
+    hotelCard.classList.add("popular_card");
+    hotelCard.innerHTML = `
+        
+        <div class="popular_content">
+        <img class="displayed-img" src="${hotel.image}" alt="${hotel.name}">
+             
+        </div>
+    `;
+    popularGrid.appendChild(hotelCard);
+});
+   
