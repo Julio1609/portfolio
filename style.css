@@ -70,7 +70,7 @@ body{
 }
 .right-side{
     flex: 1;
-    background-image: url("../Pics/IMG_1107.JPG");
+    background-image: url(".../Pics/IMG_1107.JPG");
     height: 100%;
     background-size: cover;
     background-position: 50% 60%;
