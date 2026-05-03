@@ -1,0 +1,86 @@
+body{
+    background-color: #fefcfc;
+}
+
+#project-card {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px; 
+    margin-left: 157px;
+    margin-top: 90px;
+    max-width: 500px;
+    
+
+}
+.project-card {
+    position: relative;
+    width: 620px;
+    height: 400px;
+    overflow: hidden;
+    border: solid 8px rgba(0, 0, 0, 0.26);
+    text-align: center;
+    margin: 0; /* remove the big margin */
+    border-radius: 5px;
+    box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
+}
+
+
+
+/* 1. The Wrapper (Hidden by default) */
+.button-group {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centers the whole group */
+    
+    display: flex;       /* Put buttons side-by-side */
+    gap: 50px;           /* Space between the two buttons */
+    
+    opacity: 0;          /* Hide */
+    transition: opacity 0.1s ease;
+    z-index: 10;
+   
+}
+.text {
+    position: absolute;
+    top: 35%;              /* move it above the buttons */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: aliceblue;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.1s ease;
+}
+
+.project-card:hover .text {
+    opacity: 1;
+}
+
+/* 2. Show the group on hover */
+.project-card:hover .button-group {
+    opacity: 1;
+}
+
+/* 3. Button Styling (Optional) */
+.hover-btn {
+    padding: 8px 16px;
+    background: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap; /* Prevents text from wrapping */
+}
+
+/* Darken image on hover for contrast */
+.project-card:hover img {
+    filter: brightness(40%);
+    transform: scale(1.03);
+}
+
+img{
+    height: 100%;
+    width: 100%;
+    transition: transform 0.5s ease-out, filter 0.8s ease-out; /* makes img hover in and out smoothly */
+}
+
+

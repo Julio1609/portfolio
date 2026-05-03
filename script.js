@@ -217,7 +217,7 @@ const hotels = [
     
 ];
 
-
+// work page card
 hotels.forEach(hotel => {
     const hotelCard = document.createElement("div");
     hotelCard.classList.add("popular_card");
@@ -231,3 +231,12 @@ hotels.forEach(hotel => {
     popularGrid.appendChild(hotelCard);
 });
    
+
+fetch("navbar.html")
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById("navbar").innerHTML = data;
+    });
+
+
+
