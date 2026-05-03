@@ -75,7 +75,7 @@ body{
 }
 .right-side{
     flex: 1;
-    background-image: url("IMG_1107.JPG");
+    background-image: url("Henry\ Fotografos1772.JPG");
     height: 100%;
     background-size: cover;
     background-position: 50% 60%;
@@ -1054,31 +1054,3 @@ padding: 5rem 1rem;
 
 */
 
-.job-entry {
-    padding: 1.2rem 0;
-    border-bottom: 1px solid #d9d9d9;
-}
-
-.job-entry:last-child {
-    border-bottom: none;
-}
-
-.job-entry h4 {
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--text-dark);
-    margin-bottom: 4px;
-    padding-left: 10%;
-}
-
-.job-entry span {
-    display: block;
-    font-size: 0.85rem;
-    color: var(--text-light);
-    padding-left: 10%;
-    margin-bottom: 10px;
-}
-
-.job-entry p {
-    padding-left: 10%;
-}
