@@ -64,16 +64,20 @@ body{
 /* 3. Button Styling (Optional) */
 .hover-btn {
     padding: 8px 16px;
-    background: #333;
+    background: #4d4d4df5;
     color: white;
     border: none;
     cursor: pointer;
     white-space: nowrap; /* Prevents text from wrapping */
 }
+.hover-btn:hover {
+    background: #333;
+    transition: 0.5s ease-in-out;
+}
 
 /* Darken image on hover for contrast */
 .project-card:hover img {
-    filter: brightness(40%);
+    filter: brightness(30%);
     transform: scale(1.03);
 }
 

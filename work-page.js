@@ -2,7 +2,13 @@
 // CARD DISPLAYS(SMALL DATABASE TO DISPLAY CARDS)
 const popularGrid = document.getElementById("project-card");
 
-const hotels = [
+const projects = [
+    {
+        name: "Trip to Dubai",
+        image: "Pics/trip to dubai.webp",
+        code:"https://gwosevo.com/case-study/nestle-ideal-trip-to-dubai-promo-2023/",
+        read: true
+    },
     {
         name: "SunnyDreams Hotel",
         image: "Screenshot 2025-11-10 at 05.10.56.png",
@@ -57,31 +63,29 @@ const hotels = [
         live: "https://example.com/live1",
         code: "https://github.com/Julio1609/silly-story-generator"
         
-    },
-    {
-        name: "Trip to Dubai",
-        image: "Pics/trip to dubai.webp",
-        live: "https://example.com/live1",
-        code: "https://github.com/project1"
-    },
+    }
 ];
 
 
 
-hotels.forEach(hotel => {
+projects.forEach(hotel => {
     const hotelCard = document.createElement("div");
     hotelCard.classList.add("project-card");
 
     hotelCard.innerHTML = `
-        <img src="${hotel.image}" alt="${hotel.name}">
-        
-        <p class="text">${hotel.name}</p>
-        
-        <div class="button-group">
-            <a href="${hotel.live}" class="hover-btn">Live Demo</a>
-            <a href="${hotel.code}" class="hover-btn">View Code</a>
-        </div>
-    `;
+
+    <img src="${hotel.image}" alt="${hotel.name}">
+    <p class="text">${hotel.name}</p>
+    <div class="button-group">
+        ${
+            hotel.read? `<a href="${hotel.code}" target="_blank" class="hover-btn">Read</a>` : `
+                <a href="${hotel.live}" class="hover-btn">Live Demo</a>
+                <a href="${hotel.code}" class="hover-btn">View Code</a>
+              `
+        }
+    </div>
+
+`;
 
     popularGrid.appendChild(hotelCard);
 });
