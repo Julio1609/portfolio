@@ -98,7 +98,15 @@ fetch("navbar.html")
         document.getElementById("navbar").innerHTML = data;
     });
 
-
+// FOOTER FAETCH FROM ONE PAGE TO ANOTHER TO AVOID REPETITION
+document.addEventListener("DOMContentLoaded", () => {
+    fetch("footer.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("footer").innerHTML = data;
+        })
+        .catch(error => console.error("Footer failed to load:", error));
+});
 
 
 
