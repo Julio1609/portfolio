@@ -32,35 +32,35 @@ const projects = [
     {
         name: "Image Gallery",
         image: "Screenshot 2025-11-10 at 05.14.29.png",
-        live: "https://example.com/live1",
+        live: "https://julio1609.github.io/image-gallery-/",
         code: "https://github.com/Julio1609/image-gallery-"
     },
 
     {
         name: "Temperature App",
         image: "temperature.png",
-        live: "https://example.com/live1",
+        live: "https://julio1609.github.io/Temperature-conversion/",
         code: "https://github.com/Julio1609/Temperature-conversion"
         
     },
     {
         name: "Interest Compound App",
         image: "Screenshot 2025-11-13 at 03.06.52.png",
-        live: "https://example.com/live1",
+        live: "https://julio1609.github.io/interest-calculator-/",
         code: "https://github.com/project4"
         
     },
     {
         name: "Stopwatch App",
         image: "Screenshot 2026-04-24 at 04.00.02.png",
-        live: "https://example.com/live1",
+        live: "https://julio1609.github.io/Stopwatch/ ",
         code: "https://github.com/project4"
         
     },
     {
         name: "Silly Story Generator",
         image: "Screenshot 2026-04-27 at 01.16.33.png",
-        live: "https://example.com/live1",
+        live: "https://julio1609.github.io/silly-story-generator/",
         code: "https://github.com/Julio1609/silly-story-generator"
         
     }
