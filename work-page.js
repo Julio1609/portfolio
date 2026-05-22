@@ -12,8 +12,8 @@ const projects = [
     {
         name: "SunnyDreams Hotel",
         image: "Screenshot 2025-11-10 at 05.10.56.png",
-        live: "https://example.com/live1",
-        code: "https://github.com/Julio1609/hotel-management"
+        live: "https://julio1609.github.io/Hotel-frontend/",
+        code: "https://github.com/Julio1609/Hotel-frontend"
     },
     {
         name: "My Travel Journal App",
