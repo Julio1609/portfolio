@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<style>
+
+.card-container{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.card{
+    background: #ffffff;
+    border: 1px;
+    border-radius: .25rem;
+    padding: .5rem;
+    transform: translateX(100px);
+    opacity: 0;
+    transition: 1s; /*speed of the card */
+}
+
+.card.show{
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.card-right{
+    background-color: #ffffff;
+    border: 1px;
+    border-radius: .25rem;
+    padding: .5rem;
+    transform: translateX(-100px);
+    opacity: 0;
+    transition: all 0.6s ease;
+}
+.card-right.show{
+    transform: translateX(0);
+    opacity: 1;
+    transition: ease 1s;
+}
+
+
+    /********************* PROJECT LAYOUT *************************/
+
+
+/********************* PROJECT SECTION *************************/
+
+.project-divider{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 70px;
+
+    padding: 120px 8%;
+    box-sizing: border-box;
+}
+
+
+/********************* IMAGE CONTAINERS *************************/
+
+.trip-container-left-side,
+.hotel-container-right-side{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+
+/********************* TEXT CONTAINERS *************************/
+
+.trip-container-right-side,
+.hotel-container-left-side{
+    flex: 1;
+    max-width: 520px;
+}
+
+
+/********************* IMAGES *************************/
+
+.trip-container-left-side img,
+.hotel-container-right-side img{
+    width: 100%;
+    max-width: 550px;
+
+    /* Prevent images from shrinking too much */
+    min-width: 320px;
+
+    height: auto;
+    object-fit: cover;
+
+    border-radius: 4px;
+}
+
+.hotel-container-right-side img{
+    border: 1px solid rgb(190, 180, 180);
+}
+
+
+/********************* HEADINGS *************************/
+
+.trip-container-right-side span,
+.hotel-container-left-side span{
+    display: inline-block;
+
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 20px;
+    letter-spacing: 1px;
+
+    font-family: "Droid Sans", sans-serif;
+    margin-bottom: 10px;
+}
+
+
+/********************* PARAGRAPHS *************************/
+
+.trip-container-right-side p,
+.hotel-container-left-side p{
+    color: #817e7e;
+
+    font-size: 0.95rem;
+    font-weight: 400;
+    line-height: 1.8;
+
+    font-family: "Droid Sans", sans-serif;
+
+    margin-bottom: 18px;
+}
+
+
+/********************* RESPONSIVE DESIGN *************************/
+
+@media (max-width: 1000px){
+
+    .project-divider{
+        flex-direction: column;
+        gap: 50px;
+
+        padding: 90px 6%;
+    }
+
+    /* Reverse order for alternating layouts */
+    .hotel-container-right-side{
+        order: -1;
+    }
+
+    .trip-container-right-side,
+    .hotel-container-left-side{
+        max-width: 100%;
+        text-align: left;
+    }
+
+    .trip-container-left-side img,
+    .hotel-container-right-side img{
+        width: 100%;
+        max-width: 650px;
+
+        /* Keeps image from becoming tiny */
+        min-width: unset;
+    }
+}
+
+
+@media (max-width: 600px){
+
+    .project-divider{
+        padding: 70px 5%;
+    }
+
+    .trip-container-right-side span,
+    .hotel-container-left-side span{
+        font-size: 18px;
+    }
+
+    .trip-container-right-side p,
+    .hotel-container-left-side p{
+        font-size: 0.92rem;
+        line-height: 1.7;
+    }
+}
+    </style>
+
+    <div class="project-divider project-spacing-top">
+    <div class="trip-container-left-side">
+        <img class="card-right" src="Pics/sunnyplaza.png" alt="Intercontinental Sunny Plaza">
+    </div>
+
+    <div class="trip-container-right-side">
+        <span>Intercontinental Sunny Plaza</span>
+
+        <p>
+            What started as a simple idea—making event planning easier—quickly turned into a deeper exploration of how people interact with digital systems. This event management platform was built to streamline the entire process, from organizing events to managing user interactions, all within a clean and intuitive interface.
+        </p>
+
+        <p>
+            Throughout development, the focus remained on creating a seamless experience that balances functionality with simplicity, ensuring users can navigate and interact without friction.
+        </p>
+
+        <p>
+            As the project evolved, it became more than just building features—it was about solving real problems, structuring data effectively, and understanding user behavior at every stage. Each decision shaped how the system responds, adapts, and performs behind the scenes. But this is only part of the story…
+        </p>
+    </div>
+</div>
+
+
+<div class="project-divider">
+    <div class="hotel-container-left-side">
+        <span>SunnyDreams Hotel Interface</span>
+
+        <p>
+            It began as a small front-end experiment—designing a clean travel landing page—but quickly grew into something more intentional. SunnyDreams became an opportunity to explore how structure, layout, and dynamic content can work together to create a smooth and engaging browsing experience.
+        </p>
+
+        <p>
+            Rather than simply placing elements on a page, the focus shifted toward how each section communicates with the user. The navigation, featured hotel listings, and client feedback sections were designed to guide attention naturally while maintaining a clean and visually balanced interface.
+        </p>
+
+        <p>
+            As development progressed, the project became an exercise in thinking beyond static design. JavaScript was introduced to render content dynamically, while components were organized in a scalable way to support future growth. Every decision focused not only on appearance, but also on behavior and adaptability.
+        </p>
+    </div>
+
+    <div class="hotel-container-right-side">
+        <img class="card" src="Pics/Hotel.png" alt="SunnyDreams Hotel Interface">
+    </div>
+</div>
+
+
+<div class="project-divider project-spacing-top">
+    <div class="trip-container-left-side">
+        <img class="card-right" src="Pics/trip to dubai.webp" alt="Trip to Dubai Campaign">
+    </div>
+
+    <div class="trip-container-right-side">
+        <span>Trip to Dubai</span>
+
+        <p>
+            What started as a mobile-based promotional concept for Nestlé IDEAL’s “Trip to Dubai” campaign quickly developed into a deeper exploration of how USSD technology can deliver large-scale, interactive brand experiences.
+        </p>
+
+        <p>
+            Rather than relying on traditional digital platforms, the focus shifted toward accessibility and simplicity. The interaction flow was designed so users could easily enter unique product codes, receive instant feedback, and remain engaged throughout the campaign—all from basic mobile devices.
+        </p>
+
+        <p>
+            As the system evolved, it became more than just a promotional tool. Structuring user sessions, response handling, and reward flows required careful planning to ensure the experience stayed responsive, reliable, and scalable. Beneath the surface, it’s a system designed to support high engagement while maintaining a smooth user experience.
+        </p>
+    </div>
+</div>
+
+
+<div class="project-divider">
+    <div class="hotel-container-left-side">
+        <span>Temperature Conversion App</span>
+
+        <p>
+            This temperature conversion application was designed to provide users with a fast and straightforward way to switch between Celsius and Fahrenheit through a clean, minimal interface.
+        </p>
+
+        <p>
+            The focus extended beyond basic functionality to how users interact with simple tools. Attention was given to creating clear inputs, responsive feedback, and an experience that feels intuitive and effortless.
+        </p>
+
+        <p>
+            During development, JavaScript played a key role in handling real-time calculations, validating user input, and dynamically updating the interface based on user selections. Over time, the project became more than just a conversion tool—it evolved into an exercise in improving UI clarity, structuring workflows, and strengthening the relationship between HTML, CSS, and JavaScript in building effective web applications.
+        </p>
+    </div>
+
+    <div class="hotel-container-right-side">
+        <img class="card" src="Pics/temperature.png" alt="Temperature Conversion App" style="border: none;">
+    </div>
+</div>
+
+ <script src="script.js"></script>
+</body>
+</html>
