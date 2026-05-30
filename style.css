@@ -19,7 +19,7 @@ html{
     scroll-behavior: smooth;
 }
 body{
-    overflow-x: hidden;
+    overflow-x: clip;
     scroll-behavior:smooth;
     background-color: #ffffff;
 }
@@ -553,6 +553,7 @@ padding: 5rem 1rem;
 /*********************** footer section ***********************/
 .footer{
     background-color: var(--extra-light);
+    width: 100%;
 }
 
 .footer_container{
@@ -716,7 +717,7 @@ padding: 5rem 1rem;
     justify-content: space-between;
     gap: 70px;
 
-    padding: 120px 8%;
+    padding: 50px 15%;
     box-sizing: border-box;
 }
 
@@ -748,7 +749,7 @@ padding: 5rem 1rem;
     max-width: 550px;
 
     /* Prevent images from shrinking too much */
-    min-width: 320px;
+    min-width: 420px;
 
     height: auto;
     object-fit: cover;
@@ -1121,7 +1122,7 @@ padding: 5rem 1rem;
 
 
 /* ================= TABLET VIEW (max-width: 1024px) ================= */
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 769px) and (max-width: 1024px) {
 
     /* ================= NAVBAR ================= */
 
@@ -1396,213 +1397,24 @@ padding: 5rem 1rem;
     .footer_bar::before{
         display: none;
     }
+
+    #project-card {
+
+    grid-template-columns: 1fr; /* 1 column on mobile */
+    margin-left: 0;
+    margin-top: 90px;
+    max-width: 100%;
+    justify-items: center; /* centers cards */
+
 }
 
-/* ================= LAPTOP VIEW ================= */
+.project-card {
+    width: 70%; /* make it responsive instead of fixed 620px */
+    height: auto; /* optional: lets it adapt better on mobile */
+}
+}
 
-/* 1025px — 1440px */
 
-/* @media (min-width: 1025px) and (max-width: 1440px) {
-
-    .divider{
-
-        width: 100%;
-
-        height: 100vh;
-
-        display: flex;
-
-    }
-
-    .left-side{
-
-        flex: 1;
-
-        max-width: 50%;
-
-        margin-top: 18%;
-
-        padding-left: 60px;
-
-    }
-
-    .right-side{
-
-        flex: 1;
-
-        background-size: cover;
-
-        background-position: center;
-
-    }
-
-    .heading{
-
-        font-size: 52px;
-
-        line-height: 62px;
-
-        padding-left: 10%;
-
-    }
-
-    .white{
-
-        max-width: 650px;
-
-        font-size: 1rem;
-
-        line-height: 28px;
-
-        padding-left: 10%;
-
-    } */
-
-    /* EXPERIENCE */
-/* 
-   
-
-    .divider{
-
-        width: 100%;
-
-        height: 100%;
-
-        min-height: 100vh;
-
-        display: flex;
-
-        justify-content: space-between;
-
-        align-items: flex-start;
-
-        gap: 2rem;
-
-        padding: 100px 40px;
-
-        box-sizing: border-box;
-
-        flex-wrap: wrap;
-
-    }
-
-    .experience_container{
-
-        flex: 1;
-
-        min-width: 250px;
-
-        margin-left: 88px;
-
-        min-height: 50px;
-
-        display: flex;
-
-        justify-content: center;
-
-    } */
-
-     /* .experience_col{
-
-        max-width: 420px;
-
-        margin-top: 10%;
-
-        padding-left: 20px;
-
-        padding-right: 20px;
-
-    } */
-
-    /* PROJECTS */
-
-    /* .project-divider{
-
-        gap: 3rem;
-
-        align-items: center;
-
-    }
-
-    .hotel-container-right-side img{
-        width: 90%;
-        height: auto;
-        margin-top: 30vh;
-        margin-right: 400px;
-    }
-
-    .trip-container-left-side img{
-        width: 90%;
-        height: 300px;
-        padding-top: 20px;
-    }
-
-    .trip-container-right-side,
-
-    .hotel-container-left-side{
-
-        max-width: 450px;
-
-    }
-
-    .trip-container-right-side p,
-
-    .hotel-container-left-side p{
-
-        font-size: 1rem;
-
-        line-height: 28px;
-
-    } */
-
-    /* QUOTE SECTION */
-
-    /* .section{
-
-        height: auto;
-
-        padding: 80px 0;
-
-    }
-
-    .wrapper{
-
-        padding-left: 180px;
-
-        padding-right: 80px;
-
-    }
-
-    .quote p{
-
-        font-size: 1.3rem;
-
-        line-height: 38px;
-
-    } */
-
-    /* FOOTER */
-
-    /* .footer_container{
-
-        gap: 4rem;
-        margin-left: 120px;
-
-    } */
-
-    /* LINKS */
-
-    /* .links{
-
-        right: 60px;
-
-        bottom: 40px;
-
-        margin-right: 80px;
-
-    }
-
-} */
 
 
 @media (min-width: 1025px) and (max-width: 1440px){
@@ -1653,7 +1465,7 @@ padding: 5rem 1rem;
 
     font-size: 0.9rem;
 
-    line-height: 22px;
+    line-height: 18px;
 
 }
 
@@ -1784,11 +1596,27 @@ padding: 5rem 1rem;
     }
 
 
-        .project-card {
+        /* .project-card {
 
         max-width: 520px;
 
-    }
+    } */
+
+/* PROJECT CARD SECTION */
+    #project-card {
+
+    grid-template-columns: 2, 1fr; 
+    margin-left: 100px;
+    max-width: 100%;
+    justify-items: center; /* centers cards */
+
+}
+
+.project-card {
+    width: 70%; 
+    height: auto; 
+}
+
 
 
 
